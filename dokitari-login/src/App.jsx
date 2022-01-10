@@ -4,9 +4,11 @@ import Login from "./components/Login";
 
 function App() {
   return (
-    <div className="App">
-      <p className="text-blue-400">Sign Up</p>
-      <Login />
+    <div className="App h-screen w-screen overflow-hidden">
+      <div className="flex flex-col items-center justify-center mt-24 w-full">
+        <p className="text-blue-500 text-2xl font-semibold">Sign In</p>
+        <Login />
+      </div>
     </div>
   );
 }
