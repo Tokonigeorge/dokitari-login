@@ -69,7 +69,7 @@ const Login = () => {
     handleEmailValue();
     handlePasswordValue();
     handleMatchPassword(checkPassword);
-    if (validEmail || !passwordWeak || passwordMatch) {
+    if (validEmail & !passwordWeak & passwordMatch) {
       alert("submitted succesfully");
     } else {
       return;
