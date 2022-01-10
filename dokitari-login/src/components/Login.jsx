@@ -8,7 +8,7 @@ const Login = () => {
   const [emailValue, setEmail] = useState("");
   const [passwordValue, setPassword] = useState("");
   const [checkPassword, setCheckPassword] = useState("");
-  const [validEmail, setValidEmail] = useState(false);
+  const [validEmail, setValidEmail] = useState(true);
   const [passwordWeak, setPasswordWeak] = useState(false);
   const [passwordMatch, setPasswordMatch] = useState(true);
 
