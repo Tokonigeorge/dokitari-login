@@ -4,8 +4,14 @@ import "../styles/loadinganimation.css";
 
 const Chat = () => {
   const [data, setData] = useState([]);
+
   const handleData = (value) => {
-    setData((prevState) => [...prevState, value]);
+    function Data(value) {
+      this.message = value;
+      this.timestamp = new Date();
+    }
+    let _data = new Data(value);
+    setData((prevState) => [...prevState, _data]);
   };
   return (
     <div className="bg-gray-200 h-full rounded-md md:relative w-full">
@@ -27,6 +33,7 @@ const ChatInput = ({ handleData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleData(value);
+    setValue("");
   };
 
   return (
