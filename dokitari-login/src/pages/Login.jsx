@@ -127,7 +127,7 @@ const Login = () => {
               }`}
               onChange={(e) => handleConfirmPassword(e)}
             />
-            {!passwordMatch && checkPassword.length > 0 && (
+            {!passwordMatch && passwordValue.length > 0 && (
               <ErrorMessage message="Passwords don't match, please crosscheck." />
             )}
             <button
