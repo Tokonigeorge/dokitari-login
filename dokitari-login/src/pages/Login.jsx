@@ -11,7 +11,7 @@ const Login = () => {
   const [checkPassword, setCheckPassword] = useState("");
   const [validEmail, setValidEmail] = useState(true);
   const [passwordWeak, setPasswordWeak] = useState(false);
-  const [passwordMatch, setPasswordMatch] = useState(true);
+  const [passwordMatch, setPasswordMatch] = useState(false);
   const [redirect, setRedirect] = useState(null);
 
   const handleEmailChange = (e) => {
@@ -71,7 +71,8 @@ const Login = () => {
     handleEmailValue();
     handlePasswordValue();
     handleMatchPassword(checkPassword);
-    setRedirect("/Chat");
+    // setRedirect("/Chat");
+    validEmail && !passwordWeak && passwordMatch && setRedirect("/Chat");
   };
 
   return redirect ? (
@@ -126,7 +127,7 @@ const Login = () => {
               }`}
               onChange={(e) => handleConfirmPassword(e)}
             />
-            {!passwordMatch && (
+            {!passwordMatch && checkPassword.length > 0 && (
               <ErrorMessage message="Passwords don't match, please crosscheck." />
             )}
             <button
